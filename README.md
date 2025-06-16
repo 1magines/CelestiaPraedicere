@@ -7,7 +7,7 @@
 
 **CelestiaPraedicere** is a comprehensive machine learning project that demonstrates an end-to-end workflow for identifying celestial bodies. The core of the project is to predict the identity of planets and their moons based on their orbital position data, for which we developed and optimized a **Multiple Random Forest** model to achieve high prediction accuracy.
 
-Beyond just the model, this repository is a complete ecosystem that includes a synthetic data generator for creating idealized training sets, detailed notebooks for experimentation, and a fully interactive frontend application to visualize the predicted orbits in a dynamic 3D animation. This project serves as a practical case study in data synthesis, feature engineering, tiered modeling, and web-based result presentation.
+Beyond just the model, this repository is a complete ecosystem that includes a synthetic data generator for creating idealized training sets and detailed notebooks for experimentation. This project serves as a practical case study in data synthesis, feature engineering, and tiered modeling.
 
 ## 📝 Table of Contents
 * [Key Features](#key-features)
@@ -19,8 +19,6 @@ Beyond just the model, this repository is a complete ecosystem that includes a s
 * [Methodology](#methodology)
 * [Installation & Setup](#installation--setup)
 * [Usage Instructions](#usage-instructions)
-  * [Running the Prediction Model](#running-the-prediction-model)
-  * [Running the Web Visualization](#running-the-web-visualization)
 * [Further Information & References](#further-information--references)
 
 ## ✨ Key Features
@@ -30,10 +28,8 @@ Beyond just the model, this repository is a complete ecosystem that includes a s
 
 * **Advanced Feature Engineering**: Implements a `distance_r` feature, which is the calculated radial distance of a body from the Sun ($\sqrt{x^2+y^2+z^2}$). This simple yet powerful feature provides the model with critical spatial context that is not immediately apparent from the raw coordinates, significantly boosting its ability to distinguish between orbits.
 
-* **Interactive 3D Visualization**: Features a standalone web application built with a Flask backend and a Three.js frontend. This tool allows users to upload the dataset, trigger the ML prediction pipeline in the backend, and receive data back to render and animate the predicted orbital paths in an intuitive 3D environment.
-
 ## 📂 Repository Structure
-The repository is organized to clearly separate data, source code, results, and the web application.
+The repository is organized to clearly separate data, source code, and results.
 ```
 CelestiaPraedicere/
 │
@@ -46,12 +42,6 @@ CelestiaPraedicere/
 │
 ├── synthetic_generate_data/
 │   └── one-revolution_path.ipynb                 # Jupyter Notebook to generate the synthetic dataset from orbital elements.
-│
-├── web_visualization/
-│   ├── app.py                                    # The Flask backend server that handles file uploads and ML processing.
-│   ├── index.html                                # The single-page frontend user interface.
-│   └── static/
-│       └── script.js                             # All frontend logic, including Three.js for 3D rendering and animation.
 │
 └── multiple-rf.ipynb                             # The main notebook for the entire modeling and prediction workflow.
 ```
@@ -128,13 +118,10 @@ To set up and run this project in your local environment, please follow these de
 3.  **Install Dependencies**
     This project requires several key Python libraries. A `requirements.txt` is not provided, so you can install them directly using pip. Ensure your virtual environment is active.
     ```bash
-    pip install pandas numpy scikit-learn "imblearn>=0.8" jupyterlab matplotlib seaborn flask
+    pip install pandas numpy scikit-learn "imblearn>=0.8" jupyterlab matplotlib seaborn
     ```
 
 ## 🚀 Usage Instructions
-Follow these instructions to run the different components of the project.
-
-### Running the Prediction Model
 To see the model training process, evaluate its performance, and understand the core logic:
 1.  Ensure you are in the project's root directory (`CelestiaPraedicere/`) in your terminal.
 2.  Make sure your virtual environment (`venv`) is activated.
@@ -144,22 +131,6 @@ To see the model training process, evaluate its performance, and understand the 
     ```
 4.  Your browser will open with the Jupyter interface. Use the file navigator on the left to open the **`multiple-rf.ipynb`** notebook.
 5.  You can run the cells sequentially ("Run" -> "Run All Cells") or one by one to see the output of each step, including data loading, model training, and the final classification report and confusion matrix.
-
-### Running the Web Visualization
-The interactive web application is designed to visualize the `one_revolution_paths.csv` dataset.
-1.  Open a new terminal and navigate to the `web_visualization/` directory from the project root:
-    ```bash
-    cd web_visualization
-    ```
-2.  Ensure your virtual environment is still active in this terminal.
-3.  Run the Flask server:
-    ```bash
-    python app.py
-    ```
-    You will see output indicating the server is running on `http://127.0.0.1:5000`.
-4.  Open your web browser (Chrome or Firefox recommended) and navigate to `http://127.0.0.1:5000`.
-5.  On the web page, click "Choose File" and select the `dataset/one_revolution_paths.csv` file from the repository.
-6.  Click the "Simulate Orbit" button. The application will process the data and display the 3D animated orbits.
 
 ## ℹ️ Further Information & References
 * **Project Presentation**: For a more guided and visual explanation of the project's background, methodology, and results, please see our detailed presentation hosted on the Open Science Framework (OSF).
