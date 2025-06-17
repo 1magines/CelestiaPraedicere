@@ -134,7 +134,7 @@ To see the model training process, evaluate its performance, and understand the 
 
 ## ℹ️ Further Information & References
 * **Project Presentation**: For a more guided and visual explanation of the project's background, methodology, and results, please see our detailed presentation hosted on the Open Science Framework (OSF).
-  * **[View Presentation on OSF](https://osf.io/3sz7x)**
+  * **[View Presentation on OSF](https://osf.io/dazbn)**
 
 * **Explanatory Article**: We have also authored a companion article on Medium that summarizes the project's journey, challenges, and outcomes in a narrative format.
   * **[Read the Article on Medium](https://medium.com/@azwaaliyahz/predicting-celestial-patterns-with-random-forest-ebaacc44ff5e)**
